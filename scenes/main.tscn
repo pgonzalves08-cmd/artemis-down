@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dbd6qk3g2a1nt"]
 
 [ext_resource type="PackedScene" uid="uid://do74kkklxkq0v" path="res://scenes/player/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://xaghjmp66p0q" path="res://scenes/world/world1.tscn" id="2_0wfyh"]
 
 [node name="Main" type="Node2D" unique_id=836510986]
 
@@ -15,9 +16,20 @@ position = Vector2(42.327484, -162.69235)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2016863041]
 position = Vector2(11.327484, -2.6923523)
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1505430155]
-position = Vector2(-2, -5)
+[node name="World1" parent="." unique_id=1484090707 instance=ExtResource("2_0wfyh")]
+
+[node name="floors" type="Node2D" parent="World1" unique_id=284187596]
+position = Vector2(1, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="World1/floors" unique_id=1505430155]
+position = Vector2(-3, -6)
 color = Color(0.43529412, 1, 1, 0.5686275)
 polygon = PackedVector2Array(-367, -267, 597, -265, 602, 179, -356, 180)
+
+[node name="walls" type="Node2D" parent="World1" unique_id=32745950]
+
+[node name="objects" type="Node2D" parent="World1" unique_id=1547683409]
+
+[node name="npc" type="Node2D" parent="World1" unique_id=1137595304]
 
 [editable path="Player"]
