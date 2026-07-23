@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dbd6qk3g2a1nt"]
+
+[ext_resource type="PackedScene" uid="uid://do74kkklxkq0v" path="res://scenes/player/player.tscn" id="1_o5qli"]
+
+[node name="Main" type="Node2D" unique_id=836510986]
+
+[node name="Player" parent="." unique_id=445098202 instance=ExtResource("1_o5qli")]
+position = Vector2(36.672516, 24.692352)
+motion_mode = 1
+
+[node name="Sprite2D" parent="Player" index="1" unique_id=552004635]
+z_index = 1
+position = Vector2(42.327484, -162.69235)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2016863041]
+position = Vector2(11.327484, -2.6923523)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1505430155]
+position = Vector2(-2, -5)
+color = Color(0.43529412, 1, 1, 0.5686275)
+polygon = PackedVector2Array(-367, -267, 597, -265, 602, 179, -356, 180)
+
+[editable path="Player"]
