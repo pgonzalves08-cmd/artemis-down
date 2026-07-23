@@ -21,10 +21,28 @@ position = Vector2(11.327484, -2.6923523)
 [node name="floors" type="Node2D" parent="World1" unique_id=284187596]
 position = Vector2(1, 1)
 
-[node name="Polygon2D" type="Polygon2D" parent="World1/floors" unique_id=1505430155]
+[node name="control room floor" type="Polygon2D" parent="World1/floors" unique_id=1505430155]
 position = Vector2(-3, -6)
+scale = Vector2(0.91521674, 1.3993361)
 color = Color(0.43529412, 1, 1, 0.5686275)
-polygon = PackedVector2Array(-367, -267, 597, -265, 602, 179, -356, 180)
+polygon = PackedVector2Array(-367, -267, 597, -265, 602, 179, -355, 177)
+
+[node name="storage room floor" type="Polygon2D" parent="World1/floors" unique_id=1810454484]
+position = Vector2(-616, 912)
+scale = Vector2(-0.65412927, -1.199429)
+color = Color(0.43529412, 1, 1, 0.5686275)
+polygon = PackedVector2Array(-367, -267, 597, -265, 602, 179, -355, 177)
+
+[node name="rocket ship floor" type="Polygon2D" parent="World1/floors" unique_id=1857239556]
+position = Vector2(897, 1009)
+scale = Vector2(0.5561045, 1.8920689)
+color = Color(0.43529412, 1, 1, 0.5686275)
+polygon = PackedVector2Array(-367, -267, 597, -265, 602, 179, -355, 177)
+
+[node name="hallway floor" type="Polygon2D" parent="World1/floors" unique_id=1592987898]
+scale = Vector2(1.508116, 1.31772)
+color = Color(0.05554264, 3.7993211e-06, 0.055928066, 0.8980392)
+polygon = PackedVector2Array(-41, 163, -34, 674, -236, 677, -236, 857, 466, 843, 466, 685, 124, 655, 110, 170)
 
 [node name="walls" type="Node2D" parent="World1" unique_id=32745950]
 
