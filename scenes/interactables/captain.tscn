@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://p7ymv1e4y3qx"]
+
+[ext_resource type="Script" uid="uid://dnnyi0mdldfcy" path="res://scripts/captain.gd" id="1_7bjte"]
+[ext_resource type="Texture2D" uid="uid://ca4np0hfl6nyy" path="res://captain-hat-profile.svg" id="1_fjr8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0kdp"]
+size = Vector2(418, 341)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
+size = Vector2(531, 438)
+
+[node name="captain" type="StaticBody2D" unique_id=2036204210]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1866736615]
+position = Vector2(1.9999847, 1)
+scale = Vector2(0.41210938, 0.375)
+texture = ExtResource("1_fjr8w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=693388605]
+position = Vector2(7, -38)
+shape = SubResource("RectangleShape2D_r0kdp")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=614401550]
+script = ExtResource("1_7bjte")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=978783299]
+position = Vector2(5.5, -33)
+shape = SubResource("RectangleShape2D_jyhfs")
+
+[node name="Label" type="Label" parent="Area2D" unique_id=446204611]
+visible = false
+offset_left = 71.0
+offset_top = -110.0
+offset_right = 163.0
+offset_bottom = -65.0
+scale = Vector2(2, 1.998)
+pivot_offset = Vector2(1, 1)
+pivot_offset_ratio = Vector2(1, 1)
+text = "\"E\""
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

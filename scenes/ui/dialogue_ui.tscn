@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://r6omgp6w437j"]
+
+[ext_resource type="Script" uid="uid://igxb4ri4iuov" path="res://scripts/dialogue_ui.gd" id="1_y3syv"]
+
+[node name="DialogueUI" type="CanvasLayer" unique_id=1139067633]
+script = ExtResource("1_y3syv")
+
+[node name="Panel" type="Panel" parent="." unique_id=879971756]
+offset_left = 128.0
+offset_top = 507.0
+offset_right = 898.0
+offset_bottom = 631.0
+
+[node name="NameLabel" type="Label" parent="Panel" unique_id=1560533316]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 66.0
+offset_bottom = 51.0
+text = "Captain
+"
+
+[node name="DialogueLabel" type="Label" parent="Panel" unique_id=1836218238]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 28.000004
+offset_right = 605.99927
+offset_bottom = 84.4516
+scale = Vector2(1.1600013, 1.24)
+text = "Hello..."
+autowrap_mode = 1
+
+[node name="ContinueLabel" type="Label" parent="Panel" unique_id=1137207577]
+layout_mode = 0
+offset_left = 717.0
+offset_top = 81.0
+offset_right = 804.0
+offset_bottom = 141.0
+scale = Vector2(1.1599976, 1.126459)
+text = "[E]"
+
+[node name="TypeTimer" type="Timer" parent="." unique_id=2002625101]
+wait_time = 0.030000000000000002
+
+[connection signal="timeout" from="TypeTimer" to="." method="_on_type_timer_timeout"]

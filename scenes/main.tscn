@@ -2,52 +2,432 @@
 
 [ext_resource type="PackedScene" uid="uid://do74kkklxkq0v" path="res://scenes/player/player.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://xaghjmp66p0q" path="res://scenes/world/world1.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://cw3icytx6g04k" path="res://scenes/interactables/wall.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://p7ymv1e4y3qx" path="res://scenes/interactables/captain.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://r6omgp6w437j" path="res://scenes/ui/dialogue_ui.tscn" id="5_tbgi4"]
 
 [node name="Main" type="Node2D" unique_id=836510986]
 
 [node name="Player" parent="." unique_id=445098202 instance=ExtResource("1_o5qli")]
-position = Vector2(36.672516, 24.692352)
+position = Vector2(-104, -456)
 motion_mode = 1
+
+[node name="CollisionShape2D" parent="Player" index="0" unique_id=2041754300]
+z_index = 2
+position = Vector2(42, -160.99998)
+rotation = -0.0019327388
+scale = Vector2(1.2106963, 1.3250201)
+debug_color = Color(0.9346986, 0.5527726, 0.67437744, 0.41960785)
 
 [node name="Sprite2D" parent="Player" index="1" unique_id=552004635]
 z_index = 1
-position = Vector2(42.327484, -162.69235)
+position = Vector2(41.423683, -161.07472)
+scale = Vector2(0.69412005, 0.7175824)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2016863041]
-position = Vector2(11.327484, -2.6923523)
+position = Vector2(92.327515, -118.69238)
+rotation = -0.031608164
+position_smoothing_enabled = true
 
 [node name="World1" parent="." unique_id=1484090707 instance=ExtResource("2_0wfyh")]
+position = Vector2(-48, -456)
 
 [node name="floors" type="Node2D" parent="World1" unique_id=284187596]
 position = Vector2(1, 1)
 
 [node name="control room floor" type="Polygon2D" parent="World1/floors" unique_id=1505430155]
-position = Vector2(-3, -6)
-scale = Vector2(0.91521674, 1.3993361)
+position = Vector2(-23.889832, -49.340637)
+scale = Vector2(1.1883111, 2.126065)
 color = Color(0.43529412, 1, 1, 0.5686275)
 polygon = PackedVector2Array(-367, -267, 597, -265, 602, 179, -355, 177)
 
 [node name="storage room floor" type="Polygon2D" parent="World1/floors" unique_id=1810454484]
-position = Vector2(-616, 912)
+position = Vector2(-724.00006, 1678)
+rotation = -0.006456485
 scale = Vector2(-0.65412927, -1.199429)
-color = Color(0.43529412, 1, 1, 0.5686275)
+color = Color(0.5921569, 0.11372549, 0.09411765, 0.5686275)
 polygon = PackedVector2Array(-367, -267, 597, -265, 602, 179, -355, 177)
 
 [node name="rocket ship floor" type="Polygon2D" parent="World1/floors" unique_id=1857239556]
-position = Vector2(897, 1009)
+position = Vector2(1159, 1823.0001)
 scale = Vector2(0.5561045, 1.8920689)
-color = Color(0.43529412, 1, 1, 0.5686275)
+color = Color(0.9490196, 0.18039216, 0.62352943, 0.5647059)
 polygon = PackedVector2Array(-367, -267, 597, -265, 602, 179, -355, 177)
 
 [node name="hallway floor" type="Polygon2D" parent="World1/floors" unique_id=1592987898]
-scale = Vector2(1.508116, 1.31772)
+position = Vector2(17, -58.000008)
+scale = Vector2(2.0000222, 2.427149)
 color = Color(0.05554264, 3.7993211e-06, 0.055928066, 0.8980392)
-polygon = PackedVector2Array(-41, 163, -34, 674, -236, 677, -236, 857, 466, 843, 466, 685, 124, 655, 110, 170)
+polygon = PackedVector2Array(-38.90039, 161.46414, -34.49962, 680.2219, -252.49721, 681.86993, -250.99721, 800.52765, 102.998856, 802.9997, 473.99475, 804.6477, 471.99478, 683.92993, 113.79895, 681.414, 107.99881, 161.09435)
 
 [node name="walls" type="Node2D" parent="World1" unique_id=32745950]
+position = Vector2(2609, -161)
+
+[node name="wall" parent="World1/walls" unique_id=985591468 instance=ExtResource("3_sugp2")]
+position = Vector2(-2441, -191)
+scale = Vector2(3.5199988, 1)
+
+[node name="CollisionShape2D" parent="World1/walls/wall" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall2" parent="World1/walls" unique_id=487485207 instance=ExtResource("3_sugp2")]
+position = Vector2(-2797, -34.000015)
+rotation = -1.5804727
+scale = Vector2(2.947127, 1.0040442)
+
+[node name="CollisionShape2D" parent="World1/walls/wall2" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall2" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall3" parent="World1/walls" unique_id=1980483952 instance=ExtResource("3_sugp2")]
+position = Vector2(-2844.9998, 750)
+rotation = 0.0089216605
+scale = Vector2(1.2280221, 1.0040442)
+
+[node name="CollisionShape2D" parent="World1/walls/wall3" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall3" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall4" parent="World1/walls" unique_id=1566504149 instance=ExtResource("3_sugp2")]
+position = Vector2(-2195, 62)
+rotation = 1.5698601
+scale = Vector2(2.931181, 1.0041152)
+
+[node name="CollisionShape2D" parent="World1/walls/wall4" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall4" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall5" parent="World1/walls" unique_id=1205024001 instance=ExtResource("3_sugp2")]
+position = Vector2(-2134.0002, 685)
+rotation = -0.014946971
+scale = Vector2(1.4608785, 0.80889213)
+
+[node name="CollisionShape2D" parent="World1/walls/wall5" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall5" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall6" parent="World1/walls" unique_id=1619762068 instance=ExtResource("3_sugp2")]
+position = Vector2(-2165, 1071.9999)
+rotation = -1.5712588
+scale = Vector2(3.812128, 0.8199751)
+
+[node name="CollisionShape2D" parent="World1/walls/wall6" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall6" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall7" parent="World1/walls" unique_id=1978301182 instance=ExtResource("3_sugp2")]
+position = Vector2(-2481, 1072)
+rotation = -1.5712588
+scale = Vector2(3.812128, 0.8199751)
+
+[node name="CollisionShape2D" parent="World1/walls/wall7" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall7" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall8" parent="World1/walls" unique_id=717356897 instance=ExtResource("3_sugp2")]
+position = Vector2(-2904, 1532)
+rotation = -3.144562
+scale = Vector2(1.3180863, 0.8245859)
+
+[node name="CollisionShape2D" parent="World1/walls/wall8" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall8" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall9" parent="World1/walls" unique_id=291202914 instance=ExtResource("3_sugp2")]
+position = Vector2(-3257, 1698.9999)
+rotation = -4.7307878
+scale = Vector2(0.40101257, 0.6867721)
+
+[node name="CollisionShape2D" parent="World1/walls/wall9" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall9" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall10" parent="World1/walls" unique_id=1527895883 instance=ExtResource("3_sugp2")]
+position = Vector2(-3430.0002, 1499.9999)
+rotation = -3.1444063
+scale = Vector2(1.9754575, 0.555178)
+
+[node name="CollisionShape2D" parent="World1/walls/wall10" index="0" unique_id=171899292]
+position = Vector2(-16.002281, -248.73035)
+scale = Vector2(11.846143, 2.2701538)
+
+[node name="Polygon2D" parent="World1/walls/wall10" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -77.34082, -26.525269, -77.31149, 39.24768, 194.65408, 46.625)
+
+[node name="wall11" parent="World1/walls" unique_id=1752750813 instance=ExtResource("3_sugp2")]
+position = Vector2(-3831.0002, 1922.9998)
+rotation = 1.5523976
+scale = Vector2(1.6107241, 0.48966584)
+
+[node name="CollisionShape2D" parent="World1/walls/wall11" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall11" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall12" parent="World1/walls" unique_id=2109540305 instance=ExtResource("3_sugp2")]
+position = Vector2(-3369.0002, 2278.0002)
+rotation = -0.010117901
+scale = Vector2(1.9315151, 0.48966584)
+
+[node name="CollisionShape2D" parent="World1/walls/wall12" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall12" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall13" parent="World1/walls" unique_id=1364886434 instance=ExtResource("3_sugp2")]
+position = Vector2(-2441, 1929)
+rotation = 3.137853
+scale = Vector2(4.466793, 0.49335673)
+
+[node name="CollisionShape2D" parent="World1/walls/wall13" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall13" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall14" parent="World1/walls" unique_id=604309340 instance=ExtResource("3_sugp2")]
+position = Vector2(-2969, 2095.0002)
+rotation = 4.6916485
+scale = Vector2(0.39163062, 0.49474317)
+
+[node name="CollisionShape2D" parent="World1/walls/wall14" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall14" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall15" parent="World1/walls" unique_id=2052182450 instance=ExtResource("3_sugp2")]
+position = Vector2(-1522.0001, 2165)
+rotation = 4.6916485
+scale = Vector2(0.8748485, 0.49474317)
+
+[node name="CollisionShape2D" parent="World1/walls/wall15" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall15" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall16" parent="World1/walls" unique_id=1377590986 instance=ExtResource("3_sugp2")]
+position = Vector2(-1539.0001, 1604)
+rotation = 4.6916485
+scale = Vector2(0.8748485, 0.49474317)
+
+[node name="CollisionShape2D" parent="World1/walls/wall16" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall16" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall17" parent="World1/walls" unique_id=1941318011 instance=ExtResource("3_sugp2")]
+position = Vector2(-2053, 1612.0001)
+rotation = 3.1476936
+scale = Vector2(2.2776794, 0.6006428)
+
+[node name="CollisionShape2D" parent="World1/walls/wall17" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall17" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall18" parent="World1/walls" unique_id=766647347 instance=ExtResource("3_sugp2")]
+position = Vector2(-1424.0001, 1338.0001)
+rotation = 3.1476936
+scale = Vector2(1.7062981, 0.6033147)
+
+[node name="CollisionShape2D" parent="World1/walls/wall18" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall18" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall19" parent="World1/walls" unique_id=505494420 instance=ExtResource("3_sugp2")]
+position = Vector2(-982, 1872)
+rotation = 4.7059402
+scale = Vector2(2.5112956, 0.6033147)
+
+[node name="CollisionShape2D" parent="World1/walls/wall19" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall19" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
+
+[node name="wall20" parent="World1/walls" unique_id=536864218 instance=ExtResource("3_sugp2")]
+position = Vector2(-1353, 2458.0002)
+rotation = 6.2736826
+scale = Vector2(1.6560357, 0.594151)
+
+[node name="CollisionShape2D" parent="World1/walls/wall20" index="0" unique_id=171899292]
+position = Vector2(-15.909095, -248)
+scale = Vector2(11.636707, -2.320841)
+
+[node name="Polygon2D" parent="World1/walls/wall20" index="1" unique_id=1401299395]
+position = Vector2(-28.467777, -249.88354)
+scale = Vector2(-1.2136538, 0.68463576)
+color = Color(0, 0.9607843, 0, 1)
+offset = Vector2(-70.17233, -8.818726)
+polygon = PackedVector2Array(194.65408, -23.3125, -74.86696, -23.3125, -74.86696, 46.625, 194.65408, 46.625)
 
 [node name="objects" type="Node2D" parent="World1" unique_id=1547683409]
 
 [node name="npc" type="Node2D" parent="World1" unique_id=1137595304]
 
+[node name="captain" parent="World1/npc" unique_id=2036204210 instance=ExtResource("4_jyhfs")]
+
+[node name="Sprite2D" parent="World1/npc/captain" index="0" unique_id=1866736615]
+position = Vector2(-340, -42.999992)
+scale = Vector2(0.19698906, 0.20898443)
+
+[node name="CollisionShape2D" parent="World1/npc/captain" index="1" unique_id=693388605]
+position = Vector2(-326, -43)
+scale = Vector2(0.31224644, 0.32775664)
+
+[node name="CollisionShape2D" parent="World1/npc/captain/Area2D" parent_id_path=PackedInt32Array(2036204210, 614401550) index="0" unique_id=978783299]
+position = Vector2(-318, -36)
+scale = Vector2(0.3071943, 0.3137822)
+
+[node name="Label" parent="World1/npc/captain/Area2D" parent_id_path=PackedInt32Array(2036204210, 614401550) index="1" unique_id=446204611]
+offset_left = -271.0
+offset_top = -96.0
+offset_right = -179.0
+offset_bottom = -51.0
+
+[node name="DialogueUI" parent="." unique_id=1139067633 instance=ExtResource("5_tbgi4")]
+
 [editable path="Player"]
+[editable path="World1/walls/wall"]
+[editable path="World1/walls/wall2"]
+[editable path="World1/walls/wall3"]
+[editable path="World1/walls/wall4"]
+[editable path="World1/walls/wall5"]
+[editable path="World1/walls/wall6"]
+[editable path="World1/walls/wall7"]
+[editable path="World1/walls/wall8"]
+[editable path="World1/walls/wall9"]
+[editable path="World1/walls/wall10"]
+[editable path="World1/walls/wall11"]
+[editable path="World1/walls/wall12"]
+[editable path="World1/walls/wall13"]
+[editable path="World1/walls/wall14"]
+[editable path="World1/walls/wall15"]
+[editable path="World1/walls/wall16"]
+[editable path="World1/walls/wall17"]
+[editable path="World1/walls/wall18"]
+[editable path="World1/walls/wall19"]
+[editable path="World1/walls/wall20"]
+[editable path="World1/npc/captain"]
+[editable path="DialogueUI"]
