@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cf6tolblmwjw5"]
+
+[ext_resource type="Script" uid="uid://dmkichchj32e4" path="res://scripts/objective_ui.gd" id="1_k41e5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_choun"]
+content_margin_left = 12.0
+content_margin_top = 10.0
+content_margin_right = 12.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.6039216)
+
+[node name="ObjectiveUI" type="CanvasLayer" unique_id=844908132]
+script = ExtResource("1_k41e5")
+
+[node name="Panel" type="Panel" parent="." unique_id=1027606409]
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 248.0
+offset_bottom = 176.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_choun")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1524633181]
+z_index = 1
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 23.0

@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cw3icytx6g04k" path="res://scenes/interactables/wall.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://p7ymv1e4y3qx" path="res://scenes/interactables/captain.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://r6omgp6w437j" path="res://scenes/ui/dialogue_ui.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bpvvrrjlumiwk" path="res://scenes/interactables/replacement_parts.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://cf6tolblmwjw5" path="res://scenes/ui/objective_ui.tscn" id="7_o6xl0"]
 
 [node name="Main" type="Node2D" unique_id=836510986]
 
@@ -408,6 +410,15 @@ offset_bottom = -51.0
 
 [node name="DialogueUI" parent="." unique_id=1139067633 instance=ExtResource("5_tbgi4")]
 
+[node name="Replacement parts" parent="." unique_id=380376476 instance=ExtResource("6_tefeu")]
+z_index = 1
+position = Vector2(-690, 1274)
+
+[node name="Sprite2D" parent="Replacement parts" index="0" unique_id=1099728714]
+z_index = 1
+
+[node name="ObjectiveUI" parent="." unique_id=844908132 instance=ExtResource("7_o6xl0")]
+
 [editable path="Player"]
 [editable path="World1/walls/wall"]
 [editable path="World1/walls/wall2"]
@@ -431,3 +442,5 @@ offset_bottom = -51.0
 [editable path="World1/walls/wall20"]
 [editable path="World1/npc/captain"]
 [editable path="DialogueUI"]
+[editable path="Replacement parts"]
+[editable path="ObjectiveUI"]

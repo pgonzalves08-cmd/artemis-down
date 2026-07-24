@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://p7ymv1e4y3qx"]
 
 [ext_resource type="Script" uid="uid://dnnyi0mdldfcy" path="res://scripts/captain.gd" id="1_7bjte"]
-[ext_resource type="Texture2D" uid="uid://ca4np0hfl6nyy" path="res://captain-hat-profile.svg" id="1_fjr8w"]
+[ext_resource type="Texture2D" uid="uid://ca4np0hfl6nyy" path="res://assets/sprites/captain-hat-profile.svg" id="1_fjr8w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0kdp"]
 size = Vector2(418, 341)

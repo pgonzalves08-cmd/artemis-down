@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bpvvrrjlumiwk"]
+
+[ext_resource type="Script" uid="uid://bfutltjb7xyv6" path="res://scripts/replacement_parts.gd" id="1_grvsf"]
+[ext_resource type="Texture2D" uid="uid://d1m5h46vty2hk" path="res://assets/sprites/la--tools.png" id="1_wugbo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0kdp"]
+size = Vector2(42.285435, 93)
+
+[node name="Replacement parts" type="Area2D" unique_id=380376476]
+script = ExtResource("1_grvsf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1099728714]
+position = Vector2(-1, -0.5)
+scale = Vector2(0.78125, 0.734375)
+texture = ExtResource("1_wugbo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1142901494]
+position = Vector2(0.5000019, -1.5)
+scale = Vector2(1.6317676, 1)
+shape = SubResource("RectangleShape2D_r0kdp")
+
+[node name="Label2" type="Label" parent="." unique_id=1051732848]
+visible = false
+offset_left = -34.0
+offset_top = -42.0
+offset_right = 35.0
+offset_bottom = 7.0
+text = "Press \"E\"
+"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

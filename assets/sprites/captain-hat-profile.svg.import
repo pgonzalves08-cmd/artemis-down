@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ca4np0hfl6nyy"
-path="res://.godot/imported/captain-hat-profile.svg-b3bea9e02b03ce77d226557cb9b353f6.ctex"
+path="res://.godot/imported/captain-hat-profile.svg-062cf8b926bbcaaea82ec19b42dbad84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://captain-hat-profile.svg"
-dest_files=["res://.godot/imported/captain-hat-profile.svg-b3bea9e02b03ce77d226557cb9b353f6.ctex"]
+source_file="res://assets/sprites/captain-hat-profile.svg"
+dest_files=["res://.godot/imported/captain-hat-profile.svg-062cf8b926bbcaaea82ec19b42dbad84.ctex"]
 
 [params]
 
