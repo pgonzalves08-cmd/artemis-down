@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var label = $Label
-@onready var dialogue_ui = get_node("/root/Main/DialogueUI")
+@onready var dialogue_ui = get_node("/root/Main/UI/DialogueUI")
 
 var player_near = false
 var can_interact = true    #for dialogue system

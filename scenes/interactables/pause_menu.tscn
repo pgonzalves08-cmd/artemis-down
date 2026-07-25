@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b8y41ox0uyfsq"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1193196302]
+
+[node name="Panel" type="Panel" parent="." unique_id=516774586]
+offset_left = 418.0
+offset_top = 134.0
+offset_right = 636.0
+offset_bottom = 400.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=1379781418]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 1.0
+offset_right = 159.0
+offset_bottom = 51.0
+text = "    PAUSED"

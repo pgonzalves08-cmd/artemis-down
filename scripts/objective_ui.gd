@@ -7,7 +7,7 @@ func _process(_delta):
 		0:
 			label.text = "Objective:\nTalk to the Captain"
 		1:
-			label.text = "Objective:\n--------\nFind replacement parts 
+			label.text = "Objective:\nFind replacement parts  
 			in the Storage Room"
 		2:
 			label.text = "Objective:\nReturn to the Captain"

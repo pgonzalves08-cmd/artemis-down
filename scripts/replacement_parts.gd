@@ -20,5 +20,7 @@ func _on_body_exited(body):
 func _process(_delta):
 	if player_near and QuestManager.quest_stage == 1 and Input.is_action_just_pressed("interact"):
 		QuestManager.quest_stage = 2
+		Inventory.items.append("Replacement Parts")
+		print(Inventory.items)
 		label.visible = false
 		queue_free()
